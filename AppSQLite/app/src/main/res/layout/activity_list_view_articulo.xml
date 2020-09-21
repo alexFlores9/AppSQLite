@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".List_view_articulo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/degradado"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LISTADO DE ARTICULOS REGISTRADOS"
+            android:fontFamily="serif-monospace"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_gravity="center_horizontal" />
+
+
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:iconifiedByDefault="false"
+            android:queryHint="Buscar" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+    </LinearLayout>
+<ListView
+    android:id="@+id/listViewPersonas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="80dp"
+    android:layout_marginBottom="35dp"/>
+
+    <TextView
+        android:id="@+id/tv_destino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="61dp"
+        android:background="@drawable/degradado"
+        android:elevation="4dp"
+        android:text="Copyright(c)Marlon Flores .\n xd"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
