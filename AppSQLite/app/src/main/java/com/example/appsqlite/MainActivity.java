@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -11,18 +12,22 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener {
     private EditText et_codigo,et_descripcion,et_precio;
     private Button btn_guardar, btn_consultar1,btn_consultar2,btn_eliminar,btn_actualizar;
     private TextView tv_resultado;
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     Dto datos = new Dto();
     AlertDialog.Builder dialogo;
 
-
+private FABToolbarLayout morph;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event){
@@ -84,13 +89,37 @@ public class MainActivity extends AppCompatActivity {
               confirmacion();
           }
       });
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+   /*     FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ventanas.Search(MainActivity.this);
             }
-        });
+        });*/
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        morph =findViewById(R.id.fabtoolbar);
+
+        View uno,dos,tres,cuatro,cinco,salir;
+
+        uno=findViewById(R.id.uno);
+        dos=findViewById(R.id.dos);
+        tres=findViewById(R.id.tres);
+        cuatro=findViewById(R.id.cuatro);
+        cinco=findViewById(R.id.cinco);
+        salir=findViewById(R.id.salir);
+
+        fab.setOnClickListener(this);
+        uno.setOnClickListener(this);
+        dos.setOnClickListener(this);
+        tres.setOnClickListener(this);
+        cuatro.setOnClickListener(this);
+        cinco.setOnClickListener(this);
+        salir.setOnClickListener(this);
+
+
+
         et_codigo = findViewById(R.id.et_codigo);
         et_descripcion = findViewById(R.id.et_descripcion);
         et_precio= findViewById(R.id.et_precio);
@@ -319,6 +348,72 @@ public  void modificar(View v){
             }else{
                 Toast.makeText(this, "No se han encontrado resultados para la busqueda especificada", Toast.LENGTH_SHORT).show();
             }
+        }
+    }
+    public void showToast (int opciones,String message){
+        LayoutInflater inflater =getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,(ViewGroup) findViewById(R.id.toast_root) );
+
+TextView toastText = layout.findViewById(R.id.toast_text);
+        ImageView toasImage = layout.findViewById(R.id.toast_image);
+
+        toastText.setText(message);
+        if (opciones==1){
+            toasImage.setImageResource(R.drawable.ic_save);
+        }else if (opciones==2){
+            toasImage.setImageResource(R.drawable.ic_buscar);
+        }else if (opciones==3){
+            toasImage.setImageResource(R.drawable.ic_buscar1);
+        }else if (opciones==4){
+            toasImage.setImageResource(R.drawable.ic_borrar);
+        }else if (opciones==5){
+            toasImage.setImageResource(R.drawable.ic_ed1);
+        }
+
+
+        Toast toast =new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER,0,0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId()==R.id.fab){
+            morph.show();
+        }
+        switch (v.getId()){
+            case R.id.uno:
+               showToast(1 ,"Opción para guardar en BD ");
+                morph.hide();
+                break;
+
+            case R.id.dos:
+                ventanas.Search(MainActivity.this);
+            showToast(2,"Opción para buscar por codigo ");
+                morph.hide();
+                break;
+
+            case R.id.tres:
+              showToast(3,"Opción para buscar por descripcion");
+                morph.hide();
+                break;
+
+            case R.id.cuatro:
+               showToast(4,"Opción para borrar registro en BD ");
+                morph.hide();
+                break;
+
+            case R.id.cinco:
+              showToast(5,"Opción para editar registro en BD ");
+                morph.hide();
+                break;
+
+            case R.id.salir:
+
+                morph.hide();
+                break;
         }
     }
 }

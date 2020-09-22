@@ -160,11 +160,12 @@
             android:background="@drawable/botones"
             android:shadowColor="#2314A8"
             android:shadowDx="-3"
-            android:drawableRight="@drawable/ic_borrar"
+            android:drawableRight="@drawable/ic_borrar1"
             android:paddingRight="100dp"
             android:drawablePadding="-140dp"
             android:shadowDy="0"
             android:shadowRadius="8"
+
             />
 
 
