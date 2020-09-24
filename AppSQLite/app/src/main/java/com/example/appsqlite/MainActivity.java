@@ -124,10 +124,10 @@ private FABToolbarLayout morph;
         et_descripcion = findViewById(R.id.et_descripcion);
         et_precio= findViewById(R.id.et_precio);
         btn_guardar= findViewById(R.id.btn_guardar);
-        btn_consultar1= findViewById(R.id.btn_consultar1);
-        btn_consultar2= findViewById(R.id.btn_consultar2);
-        btn_eliminar= findViewById(R.id.btn_eliminar);
-        btn_actualizar= findViewById(R.id.btn_actualizar);
+    //    btn_consultar1= findViewById(R.id.btn_consultar1);
+      //  btn_consultar2= findViewById(R.id.btn_consultar2);
+        //btn_eliminar= findViewById(R.id.btn_eliminar);
+        //btn_actualizar= findViewById(R.id.btn_actualizar);
 
         String senal="";
         String codigo="";
@@ -262,7 +262,7 @@ private FABToolbarLayout morph;
         et_precio.setText(null);
         et_codigo.requestFocus();
     }
-    public void consultaporcodigo(View v){
+    public void consultaporcodigo(){
         if(et_codigo.getText().toString().length()==0){
             et_codigo.setError("Campo obligatorio");
             inputEt=false;
@@ -284,7 +284,7 @@ private FABToolbarLayout morph;
             Toast.makeText(this, "Ingrese el codigo del articulo a buscar", Toast.LENGTH_SHORT).show();
         }
     }
-public void consultapordescripcion(View v){
+public void consultapordescripcion(){
         if(et_descripcion.getText().toString().length()==0){
             et_descripcion.setError("Campo obligatorio");
             inputEd=false;
@@ -299,7 +299,7 @@ public void consultapordescripcion(View v){
                 et_descripcion.setText(datos.getDescripcion());
                 et_precio.setText(""+datos.getPrecio());
             }else {
-                Toast.makeText(this, "No existe un articulo con dichoa descripcion", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "No existe un articulo con dicha descripcion", Toast.LENGTH_SHORT).show();
                 limpiarDatos();
             }
         }else {
@@ -308,7 +308,7 @@ public void consultapordescripcion(View v){
 }
 
 
-        public void bajaporcodigo(View v){
+        public void bajaporcodigo(){
     if (et_codigo.getText().toString().length()==0){
         et_codigo.setError("campo obligatorio");
         inputEt=false;
@@ -328,7 +328,7 @@ public void consultapordescripcion(View v){
 
     }
 
-public  void modificar(View v){
+public  void modificar(){
         if (et_codigo.getText().toString().length()==0){
             et_codigo.setError("campo obliagatorio");
             inputEt=false;
@@ -386,6 +386,7 @@ TextView toastText = layout.findViewById(R.id.toast_text);
         switch (v.getId()){
             case R.id.uno:
                showToast(1 ,"Opción para guardar en BD ");
+               alta(null);
                 morph.hide();
                 break;
 
@@ -397,16 +398,19 @@ TextView toastText = layout.findViewById(R.id.toast_text);
 
             case R.id.tres:
               showToast(3,"Opción para buscar por descripcion");
+              consultapordescripcion();
                 morph.hide();
                 break;
 
             case R.id.cuatro:
                showToast(4,"Opción para borrar registro en BD ");
+               bajaporcodigo();
                 morph.hide();
                 break;
 
             case R.id.cinco:
               showToast(5,"Opción para editar registro en BD ");
+              modificar();
                 morph.hide();
                 break;
 

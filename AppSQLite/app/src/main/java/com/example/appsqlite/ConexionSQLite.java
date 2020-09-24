@@ -190,7 +190,7 @@ public class ConexionSQLite extends SQLiteOpenHelper {
         SQLiteDatabase bd = this.getWritableDatabase();
         try {
             String descripcion = datos.getDescripcion();
-            Cursor fila = bd.rawQuery("select codigo, precio from articulos where descripcion=" + descripcion + "", null);
+            Cursor fila = bd.rawQuery("select codigo, descripcion,precio from articulos  where descripcion= '"+ descripcion + "'",null);
             if (fila.moveToFirst()) {
                 datos.setCodigo(Integer.parseInt(fila.getString(0)));
                 datos.setDescripcion(fila.getString(1));

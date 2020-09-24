@@ -107,7 +107,7 @@
             android:paddingRight="100dp"
             android:drawablePadding="-140dp"/>
 
-        <Button
+      <!--  <Button
             android:id="@+id/btn_consultar1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
             android:drawableRight="@drawable/ic_editar"
             android:paddingRight="100dp"
             android:drawablePadding="-140dp"
-            />
+            /> -->
 
 
 
