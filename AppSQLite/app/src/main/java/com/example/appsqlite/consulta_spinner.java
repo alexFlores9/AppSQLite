@@ -34,6 +34,7 @@ modal_Toast_Custom mo = new modal_Toast_Custom();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consulta_spinner);
 
+
         sp_options = findViewById(R.id.sp_options);
         tv_cod= findViewById(R.id.tv_cod);
         tv_descripcion= findViewById(R.id.tv_descripcion);
@@ -54,6 +55,7 @@ modal_Toast_Custom mo = new modal_Toast_Custom();
                 }
             }
         });
+
 
 
         item1.setOnClickListener(new View.OnClickListener() {
