@@ -8,15 +8,15 @@
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:layout_marginTop="30dp"
-    android:background="@drawable/degradado"
- >
+    android:background="@drawable/form"
+    >
 
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Busqueda por codigo"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="25dp"
@@ -33,7 +33,7 @@
         android:drawableStart="@drawable/ic_key"
         android:drawablePadding="5dp"
         android:hint="Ingrese el codigo"
-       android:textColorHint="#fff"
+        android:textColorHint="#000"
         android:inputType="number"
         android:paddingLeft="25dp"
         android:drawableLeft="@drawable/ic_key" />
@@ -41,22 +41,23 @@
 
     <Button
         android:id="@+id/btn_buscar"
-        android:layout_width="match_parent"
+        android:layout_width="297dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="62dp"
-        android:layout_marginRight="100dp"
         android:layout_marginTop="140dp"
-        android:text="Buscar"
-        android:textColor="#fff"
+        android:layout_marginRight="100dp"
         android:background="@drawable/botones"
+        android:drawableStart="@drawable/ic_5"
+        android:drawableLeft="@drawable/ic_5"
+        android:drawablePadding="0dp"
+        android:paddingLeft="10dp"
         android:shadowColor="#2314A8"
+
         android:shadowDx="-3"
         android:shadowDy="0"
         android:shadowRadius="8"
-        android:drawableStart="@drawable/ic_5"
-        android:paddingLeft="10dp"
-        android:drawablePadding="0dp"
-        android:drawableLeft="@drawable/ic_5" />
+        android:text="Buscar"
+        android:textColor="#000" />
 
     <LinearLayout
         android:layout_width="match_parent"

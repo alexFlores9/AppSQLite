@@ -10,8 +10,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 //import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.AndroidException;
 import android.view.Gravity;
@@ -51,6 +53,7 @@ public class modal_Toast_Custom extends AppCompatActivity {
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
     }
+
 
 
 
@@ -97,6 +100,46 @@ public class modal_Toast_Custom extends AppCompatActivity {
         myDialog.show();
     }
 
+
+    public void salirapp(final Context context) {
+        //dialogo1 = new AlertDialog.Builder(context);
+
+        myDialog = new Dialog(context);
+        myDialog.setContentView(R.layout.aviso_salir_app);
+        myDialog.setCancelable(false);
+
+        ImageView ivClose = (ImageView)myDialog.findViewById(R.id.cerrar);
+        Button btnAccept = (Button)myDialog.findViewById(R.id.acep);
+        Button btnCancel = myDialog.findViewById(R.id.cancel);
+
+        ivClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        btnAccept.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Clic en Acep.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(context, "Clic en Cancelar", Toast.LENGTH_SHORT).show();
+                myDialog.dismiss();
+            }
+        });
+
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
+    }
 
 
 

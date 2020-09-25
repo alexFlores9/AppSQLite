@@ -3,6 +3,8 @@ package com.example.appsqlite;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +31,22 @@ private FloatingActionMenu menu;
 private FloatingActionButton item1, item2,item3;
 
 modal_Toast_Custom mo = new modal_Toast_Custom();
+
+    private void cerrarAplicacion() {
+        new AlertDialog.Builder(this) .setIcon(R.drawable.ic_seguro)
+                .setTitle("¿Realmente desea cerrar la aplicación?")
+                .setCancelable(false) .setNegativeButton(android.R.string.cancel, null)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    // un listener queal pulsar, cierre la aplicacion
+                    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        finishAffinity();
+                        //Su funcion es algo similar a lo que se llama cuando sepresiona el botón "Forzar Detención" o "Administrar aplicaciones" , lo cuál mata la aplicación //finish(); Si solo quiere mandar la aplicación a segundo plano
+                    }
+                }).show(); }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +93,11 @@ mo.dialogConfirmCustom2(consulta_spinner.this);
         });
 
         item3.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
             @Override
             public void onClick(View view) {
-              finishAffinity();
+cerrarAplicacion();
+
             }
         });
 

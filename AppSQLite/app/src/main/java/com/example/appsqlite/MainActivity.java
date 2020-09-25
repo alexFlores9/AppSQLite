@@ -2,12 +2,14 @@ package com.example.appsqlite;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -53,9 +55,10 @@ private FABToolbarLayout morph;
                     .setMessage("Realmente desea salir?")
                     .setNegativeButton(android.R.string.cancel,null)
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                     finish();
+                   finishAffinity();
                         }
                     })
                     .show();

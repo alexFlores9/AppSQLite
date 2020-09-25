@@ -9,7 +9,7 @@
     android:layout_marginRight="15dp"
     android:layout_marginTop="30dp"
     android:orientation="vertical"
-    android:background="@drawable/degradado"
+    android:background="#000000FF"
     >
 
 

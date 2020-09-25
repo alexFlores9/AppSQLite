@@ -89,7 +89,8 @@
         android:id="@+id/menu_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:backgroundTintMode="multiply"
+       app:menu_buttonToggleAnimation="@anim/fab_slide_in_from_left"
         android:layout_gravity="bottom|end"
         >
         <com.github.clans.fab.FloatingActionButton
@@ -97,34 +98,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_spinerregresar"
-            android:backgroundTint="#00BCD4"
+            android:backgroundTintMode="multiply"
+            android:backgroundTint="#fff"
             app:borderWidth="0dp"
-            app:fab_label="Regresar"
-            app:fab_size="mini"/>
+            app:fab_label="Regresarr"
+            app:fab_size="normal"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/item2"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_spinerautor"
-            android:backgroundTint="#00BCD4"
-            app:borderWidth="0dp"
+            android:src="@drawable/ic_action_name"
+            android:backgroundTintMode="multiply"
+            android:backgroundTint="#fff"
+            app:borderWidth="4dp"
             app:fab_label="Autor"
             app:fab_size="mini"/>
 
         <com.github.clans.fab.FloatingActionButton
+
             android:id="@+id/item3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_spinnersalir"
-            android:backgroundTint="#00BCD4"
-            app:borderWidth="0dp"
-            app:fab_label="Cerrar"
+            android:backgroundTint="#fff"
+            android:backgroundTintMode="multiply"
+            app:borderWidth="6dp"
+            app:fab_label="Cerrarxd"
             app:fab_size="mini"/>
 
 
 
     </com.github.clans.fab.FloatingActionMenu>
+
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
