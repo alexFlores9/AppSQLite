@@ -28,6 +28,12 @@
         app:showAsAction="never" />
 
 
+    <item
+        android:id="@+id/recy"
+        android:orderInCategory="5"
+        android:title="Recyclerview"
+        app:showAsAction="always" />
+
 
 
 </menu>

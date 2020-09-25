@@ -208,7 +208,10 @@ private FABToolbarLayout morph;
         } else if (id == R.id.action_listaArticulos1) {
             Intent listViewActivity = new Intent(MainActivity.this, List_view_articulo.class);
             startActivity(listViewActivity);
-        }
+        }  else if (id == R.id.recy) {
+        Intent listViewActivity = new Intent(MainActivity.this, recyclerview5.class);
+        startActivity(listViewActivity);
+    }
 
         return super.onOptionsItemSelected(item);
 
