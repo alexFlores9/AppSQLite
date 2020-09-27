@@ -1,7 +1,10 @@
 package com.example.appsqlite;
 
+import android.animation.Animator;
+import android.animation.TimeInterpolator;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Interpolator;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -23,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -101,7 +105,13 @@ private FABToolbarLayout morph;
             }
         });*/
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
+
+
+
+
+
+
         morph =findViewById(R.id.fabtoolbar);
 
         View uno,dos,tres,cuatro,cinco,salir;
@@ -356,6 +366,8 @@ public  void modificar(){
             }
         }
     }
+
+
     public void showToast (int opciones,String message){
         LayoutInflater inflater =getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout,(ViewGroup) findViewById(R.id.toast_root) );

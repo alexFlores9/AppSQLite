@@ -2,15 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.appsqlite.MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="1"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+
 
     <item
         android:id="@+id/action_limpiar"
-        android:orderInCategory="2"
+      android:orderInCategory="2"
         android:title="limpiar"
         app:showAsAction="never" />
 
@@ -18,21 +14,24 @@
         android:id="@+id/action_listaArticulos"
         android:orderInCategory="3"
         android:title="Spinner"
-        app:showAsAction="never" />
+        android:icon="@drawable/spinner"
+        app:showAsAction="always|withText" />
 
 
     <item
         android:id="@+id/action_listaArticulos1"
-        android:orderInCategory="4"
+        android:orderInCategory="5"
         android:title="ListView"
-        app:showAsAction="never" />
+        android:icon="@drawable/list"
+        app:showAsAction="withText|never" />
 
 
     <item
         android:id="@+id/recy"
-        android:orderInCategory="5"
+        android:orderInCategory="4"
         android:title="Recyclerview"
-        app:showAsAction="always" />
+        android:icon="@drawable/recyclerview"
+        app:showAsAction="ifRoom|withText"/>
 
 
 

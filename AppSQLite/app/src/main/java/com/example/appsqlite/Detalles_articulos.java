@@ -2,7 +2,9 @@ package com.example.appsqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -12,6 +14,26 @@ import java.util.Locale;
 public class Detalles_articulos extends AppCompatActivity {
     private TextView tv_codigo,tv_descripcion,tv_precio;
     private TextView tv_codigo1,tv_descripcion1,tv_precio1,tv_fecha;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            new android.app.AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_seguro)
+                    .setTitle("Warning")
+                    .setMessage("Realmente desea retroceder?")
+                    .setNegativeButton(android.R.string.cancel,null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

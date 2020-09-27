@@ -30,6 +30,9 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />  />-->
 
+
+
+
     <com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout
         android:id="@+id/fabtoolbar"
         android:layout_width="match_parent"
@@ -39,32 +42,52 @@
         app:fabToolbarId="@+id/fabtoolbar_toolbar"
         app:fadeInFraction="0.2"
         app:hideDuration="600"
-        app:horizontalMargin="160dp"
+        app:horizontalMargin="16dp"
         app:showDuration="600"
         app:verticalMargin="16dp"
         >
+
 
         <RelativeLayout
             android:id="@+id/fabtoolbar_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-          android:layout_gravity="bottom|end"
+            android:layout_gravity="bottom|end"
+
             >
 
+
+            //aqui tiene que ir el floatingbutton que estoy quitando
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
-                app:backgroundTint="#131313"
+                app:backgroundTint="#00BCD4"
+                android:src="@drawable/ic_menuopen"
                 app:borderWidth="0dp"
                 app:fab_size="normal"
-                app:srcCompat="@android:drawable/ic_dialog_info"
+
 
 
                 />
 
+
+        <!--   <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/margenes_fab"
+                android:src="@drawable/icono_agregar" /> -->
+
+
+
         </RelativeLayout>
+
+
+      //aquiii
 
         <LinearLayout
             android:id="@+id/fabtoolbar_toolbar"
@@ -125,6 +148,11 @@
         </LinearLayout>
 
 
+
+
     </com.github.fafaldo.fabtoolbar.widget.FABToolbarLayout>
+
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

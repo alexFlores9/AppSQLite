@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -23,6 +24,28 @@ public class recyclerview5 extends AppCompatActivity {
     private FloatingActionButton b1, b2;
     modal_Toast_Custom mo = new modal_Toast_Custom();
     ConexionSQLite datos = new ConexionSQLite(recyclerview5.this);
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            new android.app.AlertDialog.Builder(this)
+                    .setIcon(R.drawable.ic_seguro)
+                    .setTitle("Warning")
+                    .setMessage("Realmente desea ir al inicio?")
+                    .setNegativeButton(android.R.string.cancel,null)
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                          finish();
+                        }
+                    })
+                    .show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
     private void cerrarAplicacion() {
         new AlertDialog.Builder(this) .setIcon(R.drawable.ic_seguro)
