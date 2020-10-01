@@ -101,7 +101,7 @@
             android:backgroundTintMode="multiply"
             android:backgroundTint="#fff"
             app:borderWidth="0dp"
-            app:fab_label="Regresarr"
+            app:fab_label="Regresar"
             app:fab_size="normal"/>
 
         <com.github.clans.fab.FloatingActionButton
@@ -125,7 +125,7 @@
             android:backgroundTint="#fff"
             android:backgroundTintMode="multiply"
             app:borderWidth="6dp"
-            app:fab_label="Cerrarxd"
+            app:fab_label="Cerrar"
             app:fab_size="mini"/>
 
 

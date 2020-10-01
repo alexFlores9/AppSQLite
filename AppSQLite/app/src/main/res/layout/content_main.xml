@@ -107,6 +107,25 @@
             android:text="Guardar"
             android:textColor="#fff" />
 
+
+        <Button
+            android:id="@+id/btn_csv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/botones"
+            android:drawableRight="@drawable/ic_4"
+            android:drawablePadding="-140dp"
+            android:onClick="csv"
+            android:paddingRight="100dp"
+            android:shadowColor="#2314A8"
+            android:shadowDx="-3"
+            android:shadowDy="0"
+            android:shadowRadius="8"
+            android:text="backup"
+            android:textColor="#fff" />
       <!--  <Button
             android:id="@+id/btn_consultar1"
             android:layout_width="match_parent"

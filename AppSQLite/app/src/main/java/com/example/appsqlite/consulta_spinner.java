@@ -40,10 +40,11 @@ modal_Toast_Custom mo = new modal_Toast_Custom();
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     // un listener queal pulsar, cierre la aplicacion
 
+                    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        finish();
+                        finishAffinity();
                         //Su funcion es algo similar a lo que se llama cuando sepresiona el botón "Forzar Detención" o "Administrar aplicaciones" , lo cuál mata la aplicación //finish(); Si solo quiere mandar la aplicación a segundo plano
                     }
                 }).show(); }
