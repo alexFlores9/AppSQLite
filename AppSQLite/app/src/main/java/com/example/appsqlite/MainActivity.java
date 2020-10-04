@@ -188,10 +188,11 @@ private FABToolbarLayout morph;
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Prueba de toast", Toast.LENGTH_SHORT).show();
+
                 // validamos si estan los permisos
                 if(CheckPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)){
                     // si hay permisos entonces hacer el backup
+
                     backupDatabae();
                 }else{
                     // si no hay permisos entonces preguntarle al usuario que de los permisos
@@ -225,20 +226,23 @@ private FABToolbarLayout morph;
         try{
 
             File memoriaSd = Environment.getExternalStorageDirectory();
+
             File datosBd = Environment.getDataDirectory();
             String packageName = "com.example.appsqlite"; // este el id de la app
             String sourceDBNAME = "administracion.db"; // el nombre de nuestra bd
-            String targeDBName = "dbCopy"; // el nombre del backup
+            String targeDBName = "Back-up"; // el nombre del backup
             if(memoriaSd.canWrite()){
                 Date now = new Date(); // la fecha de hoy
-                String currentBDPath = "data/"+ packageName + "/databases/" + sourceDBNAME; // Este es una forma para obtener las ruta y la bd
+                //getPackageName()  prueba
+                String currentBDPath = "data/"+ getPackageName() + "/databases/" + sourceDBNAME; // Este es una forma para obtener las ruta y la bd
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm"); // para poner la fecha del backup
                 String backupBDPach = targeDBName + dateFormat.format(now) + ".db"; // renombramos BD
 
                 File currentBD = new File(datosBd, currentBDPath);
                 File backupBd = new File(memoriaSd, backupBDPach);
                 // Hasta aqui ya hice la copia de la BD ahora debemos de pasar esa copia a la SD
-                Toast.makeText(MainActivity.this, "Backup debe realizado ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Copia creada con exito! \n" +
+                        "Ubicada en memoria interna", Toast.LENGTH_SHORT).show();
 
                 Log.i("backup","backupDB=" + backupBd.getAbsolutePath());
                 Log.i("backup","sourceDB=" + currentBD.getAbsolutePath());

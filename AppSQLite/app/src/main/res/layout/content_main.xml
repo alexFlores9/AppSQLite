@@ -118,7 +118,7 @@
             android:background="@drawable/botones"
             android:drawableRight="@drawable/ic_4"
             android:drawablePadding="-140dp"
-            android:onClick="csv"
+
             android:paddingRight="100dp"
             android:shadowColor="#2314A8"
             android:shadowDx="-3"
